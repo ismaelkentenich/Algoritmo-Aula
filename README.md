@@ -1,2 +1,2 @@
-# Algoritmo Aula
- Primeiro repositório (com algoritmo feito em outra aula).
+# Algoritmo para Aula
+ Primeiro repositório.
