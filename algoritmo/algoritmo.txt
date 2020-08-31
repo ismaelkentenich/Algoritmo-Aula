@@ -1,40 +1,50 @@
-Algoritmo "questao 03"
+Algoritmo "questao 15"
 // 
 // Autor(a)    : Ismael Kentenich Mesquita Andrade
-// Data atual  : 25/08/2020
+// Data atual  : 26/08/2020
 Var
- idade, a: inteiro
- faixa1, faixa2, faixa3, faixa4, faixa5, porFaixa1, porFaixa5: real
+ sexo, resp : caracter
+ respSIM, respNAO, mulherSIM, homemNAO, homem, i: inteiro
+ porc: real
 
 Inicio
- escreva("Digite as 8 idades: ")
- para a de 1 até 8 faca
-  leia(idade)
-  se (idade <= 15) entao
-   faixa1 <- faixa1 + 1
-  fimse
-  se (idade >= 16) e (idade <= 30) entao
-   faixa2 <- faixa2 + 1
-  fimse
-  se (idade >= 31) e (idade <= 45) entao
-   faixa3 <- faixa3 + 1
-  fimse
-  se (idade >= 46) e (idade <= 60) entao
-   faixa4 <- faixa4 + 1
-  fimse
-  se (idade > 60) entao
-   faixa5 <- faixa5 + 1
-  fimse
-  fimpara
-  porFaixa1 <- (faixa1 * 100)/8
-  porFaixa5 <- (faixa5 * 100)/8
-  escreval("Pessoas na Faixa 1: ", faixa1)
-  escreval("Pessoas na Faixa 2: ", faixa2)
-  escreval("Pessoas na Faixa 3: ", faixa3)
-  escreval("Pessoas na Faixa 4: ", faixa4)
-  escreval("Pessoas na Faixa 5: ", faixa5)
-  escreval("A porcentagem de pessoas na primeira faixa com relação ao total de pessoas é: ", porFaixa1, "%")
-  escreval("A porcentagem de pessoas na última faixa com relação ao total de pessoas é: ", porFaixa5, "%")
-  
+respSIM <- 0
+respNAO <- 0
+mulherSIM <- 0
+homemNAO <- 0
+homem <- 0
+ escreval("Códigos de sexo: F - Feminino; M - Masculino")
+ escreval("Códigos do feedback: S - Sim; N - Não")
+ para i de 1 ate 10 faca
+   escreva("Digite o sexo: ")
+   leia(sexo)
+   escreva("Digite o feedback: ")
+   leia(resp)
+  se (resp = "S") entao
+   respSIM <- respSIM + 1
+   senao
+   se (resp = "N") entao
+     respNAO <- respNAO + 1
+   fimse
+ fimse
+
+ se (resp = "S") e (sexo = "F") entao
+   mulherSIM <- mulherSIM + 1
+   senao
+   se (resp = "N") e (sexo = "M") entao
+       homemNAO <- homemNAO + 1
+   fimse
+ fimse
+   se (sexo = "M") entao
+      homem <- homem + 1
+   fimse
+ fimpara
+  porc <- (homemNAO/homem) * 100
+ 
+ escreval("Pessoas que responderam SIM: ", respSIM)
+ escreval("Pessoas que responderam NAO: ", respNAO)
+ escreval("Mulheres que responderam SIM: ", mulherSIM)
+ escreval("Porcentagem de homens que responderam NÃO entre todos os homens: ", porc, "%")
+
 
 Fimalgoritmo
